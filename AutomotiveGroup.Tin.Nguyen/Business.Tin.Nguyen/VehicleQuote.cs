@@ -8,6 +8,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace Business.Tin.Nguyen
 {
@@ -19,6 +20,21 @@ namespace Business.Tin.Nguyen
         private decimal tradeInValue;
         private List<VehicleOption> options;
         private Vehicle vehicle;
+
+        /// <summary>
+        /// Occurs when the <see cref="TradeInValue"/> changes.
+        /// </summary>
+        public event EventHandler TradeInValueChanged;
+
+        /// <summary>
+        /// Occurs when the <see cref="VehicleOption"/> object is added to the VehicleQuote object's options attribute.
+        /// </summary>
+        public event EventHandler<VehicleOptionAddedEventArgs> VehicleOptionAdded;
+
+        /// <summary>
+        /// Occurs when the <see cref="VehicleOption"/> object is removed to the VehicleQuote object's options attribute.
+        /// </summary>
+        public event EventHandler VehicleOptionRemoved;
 
         /// <summary>
         /// Gets and sets the traInValue of VehicleQuote.
@@ -36,7 +52,12 @@ namespace Business.Tin.Nguyen
                     throw new ArgumentOutOfRangeException("value", "The value must be 0 or greater.");
                 }
 
-                this.tradeInValue = value;
+                if (value != this.tradeInValue)
+                {
+                    this.tradeInValue = value;
+
+                    OnTradeInValueChanged();
+                }
             }
         }
 
@@ -104,6 +125,8 @@ namespace Business.Tin.Nguyen
             }
 
             options.Add(vehicleOption);
+
+            OnVehicleOptionAdded();
         }
             
         /// <summary>
@@ -113,6 +136,8 @@ namespace Business.Tin.Nguyen
         public void RemoveVehicleOption(VehicleOption vehicleOption)
         {
             options.Remove(vehicleOption);
+
+            OnVehicleOptionRemoved();
         }
 
         /// <summary>
@@ -182,6 +207,39 @@ namespace Business.Tin.Nguyen
         public override string ToString()
         {
             return $"VehicleQuote: {GetAmountDue():C}";
+        }
+
+        /// <summary>
+        /// Raises the <see cref=">TradeInValueChanged"/> event.
+        /// </summary>
+        protected virtual void OnTradeInValueChanged()
+        {
+            if (TradeInValueChanged != null)
+            {
+                TradeInValueChanged(this, EventArgs.Empty);
+            }
+        }
+
+        /// <summary>
+        /// Raises the <see cref="VehicleOptionAdded"/> event.
+        /// </summary>
+        protected virtual void OnVehicleOptionAdded()
+        {
+            if (VehicleOptionAdded != null)
+            {
+                VehicleOptionAdded(this, new VehicleOptionAddedEventArgs(options));
+            }
+        }
+
+        /// <summary>
+        /// Raises the <see cref="VehicleOptionRemoved"/> event.
+        /// </summary>
+        protected virtual void OnVehicleOptionRemoved()
+        {
+            if (VehicleOptionRemoved != null)
+            {
+                VehicleOptionRemoved(this, EventArgs.Empty);
+            }
         }
     }
 }

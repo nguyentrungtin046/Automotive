@@ -15,65 +15,78 @@ namespace Business.Tin.Nguyen
     {
         static void Main(string[] args)
         {
-            // 1. Declare a variable that can reference a Vehicle object.
-            Vehicle vehicle;
+            // 1. Declare and define a variable that references a VehicleQuote object.
+            VehicleQuote vehicleQuote = new VehicleQuote(0.07m, new Vehicle(2024, "Ford", "Hybrid", PaintColor.Blue, 29000));
 
-            // 2. Define the variable from the previous step with a new instance of Vehicle.
-            vehicle = new Vehicle(2019, "Honda Civic", "Honda", PaintColor.Black, 20000);
+            // 2. Define a method in this class that handles the event that occurs when the sale price changes.
+            //    The handler method will print: "The sale price changed to {sale-price}."
+            //    Subscribe to the event below using the handler method you just defined.            
+            vehicleQuote.PriceChanged += Quote_SalePriceChange;
 
-            // 3. Declare a variable that can reference a VehicleQuote instance.
-            VehicleQuote vehicleQuote;
+            // 3. Define a method in this class that handles the event that occurs when an option is added to the quote.
+            //    The handler method will print: "The following option was added to the quote:\n{vehicle-option}" 
+            //    Subscribe to the event below using the handler method you just defined.
+            vehicleQuote.VehicleOptionAdded += VehicleQuote_VehicleOptionAdded;
 
-            // 4. Define the variable from the previous step with a new instance of VehicleQuote.
-            //    Specify an argument for tax rate, vehicle and trade-in value.
-            vehicleQuote = new VehicleQuote(0.12m, vehicle, 5000);
+            // 4. Define a method in this class that handles the event that occurs when trade-in value has been changed.
+            //    The handler method will print "The trade-in value has been changed."
+            //    Subscribe to the event below using the handler method you just defined.            
+            vehicleQuote.TradeInValueChanged += VehicleQuote_TradeInValueChanged;
 
-            // 5. Define a variable to a new instance of the VehicleOption class.
-            VehicleOption vehicleOption = new VehicleOption("Yellow Light", 500, 1);
+            // 5. Declare and define a variable to reference a new instance of the VehicleOption class.
+            VehicleOption option = new VehicleOption("winter tire", 250, 4);
 
             // 6. Add the VehicleOption created in the previous statement to the options of the
             //    VehicleQuote instance.
-            vehicleQuote.AddVehicleOption(vehicleOption);
+            vehicleQuote.AddVehicleOption(option);
 
             // 7. Add two more VehicleOption objects to the VehicleQuote instance. Only use two statements
             //    to accomplish this step.
-            vehicleQuote.AddVehicleOption(new VehicleOption("Winter Tire", 300, 4));
-            vehicleQuote.AddVehicleOption(new VehicleOption("Leather Seat", 700, 2));
+            vehicleQuote.AddVehicleOption(new VehicleOption("Leather Seats", 1000, 1));
+            vehicleQuote.AddVehicleOption(new VehicleOption("Sunroof", 800, 1));
 
-            // 8. Print the quote details to the console.
-            //    This step requires defining a sub-procedure method (see below).
-            PrintQuoteDetails(vehicleQuote);
+            // 8. Change the sale price of the VehicleQuote to a different value than its current state.
+            vehicleQuote.SalePrice = 30000;
 
-            // 9. Remove the first VehicleOption added to the VehicleQuote.
-            vehicleQuote.RemoveVehicleOption(vehicleOption);
+            // 9. Add another VehicleOption to the VehicleQuote.
+            vehicleQuote.AddVehicleOption(new VehicleOption("GPS Navigation", 500, 1));
 
-            // 10. Print the number of VehicleOption objects currently in the quote. Ensure you are
-            //     obtaining this information using the VehicleQuote object reference.
-            Console.WriteLine($"Number of vehicle options in the quote: {vehicleQuote.GetCopyVehicleOption().Count}");
+            // 10. Change the trade-in value of the VehicleQuote to a different value than its current state.
+            vehicleQuote.TradeInValue = 2000;
 
+            // 11. Repeat the previous statement.
+            vehicleQuote.TradeInValue = 2000;
 
-            //Using a ReadLine method so the terminal window stays open.
-            Console.WriteLine("Press any key to continue...");
+            Console.Write("Press any key to continue...");
             Console.ReadKey();
         }
 
         /// <summary>
-        /// Sub-procedure method prints the details of a VehicleQuote.
+        /// Handles the SalePriceChanged event of a Quote.
         /// </summary>
-        /// <param name="vehicleQuote">An argument of VehicleQuote type.</param>
-        static void PrintQuoteDetails(VehicleQuote vehicleQuote)
+        static void Quote_SalePriceChange(object sender, EventArgs e)
         {
-            Console.WriteLine($"Vehicle sale price: {vehicleQuote.SalePrice:C}");
-            Console.WriteLine("Option:");
-            foreach (VehicleOption option in vehicleQuote.GetCopyVehicleOption())
-            {
-                Console.WriteLine($"\t{option}");
-            }
-            Console.WriteLine($"Subtotal: {vehicleQuote.GetSubtotalVehicle():C}");
-            Console.WriteLine($"Sales tax: {vehicleQuote.GetSalesTax()}");
-            Console.WriteLine($"Total: {vehicleQuote.GetTotalOfQuote():C}");
-            Console.WriteLine($"Trade-in value: -{vehicleQuote.TradeInValue}");
-            Console.WriteLine($"Amount due: {vehicleQuote.GetAmountDue():C}");
+            Quote quote = (Quote)sender;
+
+            Console.WriteLine($"The sale price changed to {quote.SalePrice}");
+        }
+
+        /// <summary>
+        /// Handles the VehicleOptionAdded event of a VehicleQuote.
+        /// </summary>
+        static void VehicleQuote_VehicleOptionAdded(object sender, VehicleOptionAddedEventArgs e)
+        {
+            VehicleOption newOption = e.OptionAdded[e.OptionAdded.Count - 1];           
+            Console.WriteLine($"The following option was added to the quote:\n" +
+                $"{newOption}");          
+        }
+
+        /// <summary>
+        /// Handles the TraInValueChanged event of a VehicleQuote.
+        /// </summary>
+        static void VehicleQuote_TradeInValueChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("The trade-in value has been changed.");
         }
     }
 }

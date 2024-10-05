@@ -3,7 +3,7 @@
  * Program: Business Information Technology
  * Course: ADEV-2008 Programming 2
  * Created: 15-01-2024
- * Updated:06-02-2024
+ * Updated:17-03-2024
  */
 
 using System;
@@ -16,6 +16,11 @@ namespace Business.Tin.Nguyen
     public abstract class Quote
     {
         private decimal salePrice;
+
+        /// <summary>
+        /// Occurs when <see cref="salePrice"/> changes.
+        /// </summary>
+        public event EventHandler PriceChanged;
 
         /// <summary>
         /// Gets and sets the salePrice of Quote.
@@ -32,7 +37,13 @@ namespace Business.Tin.Nguyen
                 {
                     throw new ArgumentOutOfRangeException("value", "The value must be greater than 0.");
                 }
-                this.salePrice = value;
+
+                if (this.salePrice != value)
+                {
+                    this.salePrice = value;
+
+                    OnPriceChanged();
+                }
             }
         }
 
@@ -95,6 +106,17 @@ namespace Business.Tin.Nguyen
         public override string ToString()
         {
             return $"Quote: {GetTotalOfQuote():C}";
+        }
+
+        /// <summary>
+        /// Raises the <see cref="PriceChanged"/> event.
+        /// </summary>
+        protected virtual void OnPriceChanged()
+        {
+            if (PriceChanged != null)
+            {
+                PriceChanged(this, EventArgs.Empty);
+            }
         }
     }
 }
