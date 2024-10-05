@@ -1,36 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\rrc_polytech\\Term-2\\PROGRAMMING 2( ADEV-2008)\\Assignment\\Individual assignment\\Module5\\AutomotiveGroup.Tin.Nguyen\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{F22C43AF-60ED-4DE1-B1C1-6221F9C7E3A8}|Business.Tin.Nguyen\\Business.Tin.Nguyen.csproj|d:\\rrc_polytech\\term-2\\programming 2( adev-2008)\\assignment\\individual assignment\\module5\\automotivegroup.tin.nguyen\\business.tin.nguyen\\vehicleoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F22C43AF-60ED-4DE1-B1C1-6221F9C7E3A8}|Business.Tin.Nguyen\\Business.Tin.Nguyen.csproj|solutionrelative:business.tin.nguyen\\vehicleoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "D:\\rrc_polytech\\Term-2\\PROGRAMMING 2( ADEV-2008)\\Assignment\\Individual assignment\\Push\\AutomotiveGroup.Tin.Nguyen\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
-        {
-          "DockedWidth": 593,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "VehicleOption.cs",
-              "DocumentMoniker": "D:\\rrc_polytech\\Term-2\\PROGRAMMING 2( ADEV-2008)\\Assignment\\Individual assignment\\Module5\\AutomotiveGroup.Tin.Nguyen\\Business.Tin.Nguyen\\VehicleOption.cs",
-              "RelativeDocumentMoniker": "Business.Tin.Nguyen\\VehicleOption.cs",
-              "ToolTip": "D:\\rrc_polytech\\Term-2\\PROGRAMMING 2( ADEV-2008)\\Assignment\\Individual assignment\\Module5\\AutomotiveGroup.Tin.Nguyen\\Business.Tin.Nguyen\\VehicleOption.cs",
-              "RelativeToolTip": "Business.Tin.Nguyen\\VehicleOption.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T03:23:57.298Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
         {
           "DockedWidth": 593,
           "SelectedChildIndex": -1,

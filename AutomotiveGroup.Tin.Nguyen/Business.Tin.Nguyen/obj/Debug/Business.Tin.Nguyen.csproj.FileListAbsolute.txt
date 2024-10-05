@@ -22,3 +22,9 @@ D:\rrc_polytech\Term-2\PROGRAMMING 2( ADEV-2008)\Assignment\Individual assignmen
 D:\rrc_polytech\Term-2\PROGRAMMING 2( ADEV-2008)\Assignment\Individual assignment\Module5\AutomotiveGroup.Tin.Nguyen\Business.Tin.Nguyen\obj\Debug\Business.Tin.Nguyen.csproj.CoreCompileInputs.cache
 D:\rrc_polytech\Term-2\PROGRAMMING 2( ADEV-2008)\Assignment\Individual assignment\Module5\AutomotiveGroup.Tin.Nguyen\Business.Tin.Nguyen\obj\Debug\Business.Tin.Nguyen.dll
 D:\rrc_polytech\Term-2\PROGRAMMING 2( ADEV-2008)\Assignment\Individual assignment\Module5\AutomotiveGroup.Tin.Nguyen\Business.Tin.Nguyen\obj\Debug\Business.Tin.Nguyen.pdb
+D:\rrc_polytech\Term-2\PROGRAMMING 2( ADEV-2008)\Assignment\Individual assignment\Push\AutomotiveGroup.Tin.Nguyen\Business.Tin.Nguyen\bin\Debug\Business.Tin.Nguyen.dll
+D:\rrc_polytech\Term-2\PROGRAMMING 2( ADEV-2008)\Assignment\Individual assignment\Push\AutomotiveGroup.Tin.Nguyen\Business.Tin.Nguyen\bin\Debug\Business.Tin.Nguyen.pdb
+D:\rrc_polytech\Term-2\PROGRAMMING 2( ADEV-2008)\Assignment\Individual assignment\Push\AutomotiveGroup.Tin.Nguyen\Business.Tin.Nguyen\obj\Debug\Business.Tin.Nguyen.csproj.AssemblyReference.cache
+D:\rrc_polytech\Term-2\PROGRAMMING 2( ADEV-2008)\Assignment\Individual assignment\Push\AutomotiveGroup.Tin.Nguyen\Business.Tin.Nguyen\obj\Debug\Business.Tin.Nguyen.csproj.CoreCompileInputs.cache
+D:\rrc_polytech\Term-2\PROGRAMMING 2( ADEV-2008)\Assignment\Individual assignment\Push\AutomotiveGroup.Tin.Nguyen\Business.Tin.Nguyen\obj\Debug\Business.Tin.Nguyen.dll
+D:\rrc_polytech\Term-2\PROGRAMMING 2( ADEV-2008)\Assignment\Individual assignment\Push\AutomotiveGroup.Tin.Nguyen\Business.Tin.Nguyen\obj\Debug\Business.Tin.Nguyen.pdb
