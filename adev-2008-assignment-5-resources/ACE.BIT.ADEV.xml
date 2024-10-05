@@ -1,0 +1,271 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ACE.BIT.ADEV</name>
+    </assembly>
+    <members>
+        <member name="T:ACE.BIT.ADEV.Finance.Financial">
+            <summary>
+            Contains finance related functions.
+            </summary>
+        </member>
+        <member name="M:ACE.BIT.ADEV.Finance.Financial.GetPayment(System.Decimal,System.Int32,System.Decimal)">
+            <summary>
+            Returns the payment amount for an annuity based on periodic, fixed payments and a fixed interest rate.
+            </summary>
+            <param name="rate">
+            The interest rate per payment period. 
+            For example, if the rate is an annual percentage rate (APR) of 10 percent and the customer makes monthly payments, 
+            the rate per period is 0.1 / 12, or 0.0083.
+            </param>
+            <param name="numberOfPayments">
+            The total number of payment periods in the loan term. 
+            For example, if payments are made monthly on a four term, the loan has a total of 4 × 12 (or 48) payment periods.
+            </param>
+            <param name="presentValue">
+            The present value (or lump sum) that a series of payments to be paid in the future is worth now. 
+            For example, when a customer finances a vehicle, the loan amount is the present value.
+            </param>
+            <returns>The payment amount for an annuity based on periodic, fixed payments and a fixed interest rate.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            Thrown when <paramref name="rate"/> is less than 0 or greater than 1, the <paramref name="numberOfPayments"/> is
+            less than or equal to zero, or the <paramref name="presentValue"/> is less than or equal to zero.
+            </exception>
+        </member>
+        <member name="T:ACE.BIT.ADEV.Forms.AddOptionForm">
+            <summary>
+            Represents a Form used for entering vehicle option data.
+            </summary>
+        </member>
+        <member name="M:ACE.BIT.ADEV.Forms.AddOptionForm.#ctor">
+            <summary>
+            Initializes a new instance of the AddOptionForm class.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.AddOptionForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ACE.BIT.ADEV.Forms.AddOptionForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ACE.BIT.ADEV.Forms.AddOptionForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.AddOptionForm.txtDescription">
+            <summary>
+            The description TextBox.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.AddOptionForm.txtUnitPrice">
+            <summary>
+            The unit price TextBox.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.AddOptionForm.nudQuantity">
+            <summary>
+            The quantity NumericUpDown.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.AddOptionForm.btnAdd">
+            <summary>
+            The add Button.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.AddOptionForm.btnCancel">
+            <summary>
+            The cancel Button.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.AddOptionForm.errorProvider">
+            <summary>
+            The form's ErrorProvider.
+            </summary>
+        </member>
+        <member name="T:ACE.BIT.ADEV.Forms.FinancingForm">
+            <summary>
+            Represents a form for calculating a loan for a vehicle.
+            </summary>
+        </member>
+        <member name="M:ACE.BIT.ADEV.Forms.FinancingForm.#ctor">
+            <summary>
+            Initializes a new instance of the FinancingForm class.
+            </summary>
+            <remarks>
+            When the FinancingForm is initialized the Click event of the close <seealso cref="T:System.Windows.Forms.Button"/>
+            is handled. Clicking the button will close the form.
+            </remarks>
+        </member>
+        <member name="M:ACE.BIT.ADEV.Forms.FinancingForm.BtnClose_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the close button.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.FinancingForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ACE.BIT.ADEV.Forms.FinancingForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ACE.BIT.ADEV.Forms.FinancingForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.FinancingForm.lblQuotedPrice">
+            <summary>
+            The quoted price Label.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.FinancingForm.cboLoanTerm">
+            <summary>
+            The loan term ComboBox.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.FinancingForm.nudAnnualInterestRate">
+            <summary>
+            The annual interest rate NumericUpDown.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.FinancingForm.txtMonthlyPayment">
+            <summary>
+            The monthly payment TextBox.
+            </summary>
+        </member>
+        <member name="T:ACE.BIT.ADEV.Forms.QuoteForm">
+            <summary>
+            Represents a form for creating a sales quote for the purchase of a vehicle.
+            </summary>
+        </member>
+        <member name="M:ACE.BIT.ADEV.Forms.QuoteForm.#ctor">
+            <summary>
+            Initializes a new instance of the QuoteForm class.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.QuoteForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ACE.BIT.ADEV.Forms.QuoteForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ACE.BIT.ADEV.Forms.QuoteForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.QuoteForm.lstVehicleOptions">
+            <summary>
+            The vehicle options ListBox.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.QuoteForm.mnuNew">
+            <summary>
+            The new ToolStripMenuItem.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.QuoteForm.mnuExit">
+            <summary>
+            The exit ToolStripMenuItem.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.QuoteForm.mnuAddOption">
+            <summary>
+            The add option ToolStripMenuItem.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.QuoteForm.mnuAbout">
+            <summary>
+            The about ToolStripMenuItem.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.QuoteForm.btnAddOption">
+            <summary>
+            The add option Button.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.QuoteForm.mnuFinancing">
+            <summary>
+            The financing ToolStripMenuItem.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.QuoteForm.cboVehicle">
+            <summary>
+            The vehicle ComboBox.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.QuoteForm.btnRemoveOption">
+            <summary>
+            The remove option Button.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.QuoteForm.mnuRemoveOption">
+            <summary>
+            The remove option ToolStripMenuItem.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.QuoteForm.txtTotalOptions">
+            <summary>
+            The total options TextBox.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.QuoteForm.txtSubtotal">
+            <summary>
+            The subtotal TextBox.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.QuoteForm.txtTax">
+            <summary>
+            The tax TextBox.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.QuoteForm.txtTotal">
+            <summary>
+            The total TextBox.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.QuoteForm.txtAmountDue">
+            <summary>
+            The amount due TextBox.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.QuoteForm.lblTaxRate">
+            <summary>
+            The tax rate Label.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.QuoteForm.errorProvider">
+            <summary>
+            The form's ErrorProvider.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.QuoteForm.txtSalePrice">
+            <summary>
+            The sale price TextBox.
+            </summary>
+        </member>
+        <member name="F:ACE.BIT.ADEV.Forms.QuoteForm.nudTradeInValue">
+            <summary>
+            The trade-in value NumericUpDown.
+            </summary>
+        </member>
+    </members>
+</doc>
